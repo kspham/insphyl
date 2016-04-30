@@ -77,8 +77,12 @@ Create an array that records the breadth of coverage from the remapped BAM file.
 Based on the record of mapping coverage, the script pick out the insertions that shared only by the outbreak isolates. The sequences is saved in FASTA format.
 ###`annotate.py`
 The script uses `prokka` to annotate the epidemic insertions
-##Author
+##Other Contributor
 **Tri Le**  
 Intenational University, Ho Chi Minh, Vietnam  
 Institute of Computer Science and Technology, Ho Chi Minh, Vietnam  
 tri.lqm@icst.org.vn
+**Ly Le**
+International University, Ho Chi Minh, Vietnam
+Institute of Computer Science and Technology, Ho Chi Minh, Vietnam
+ly.le@hcmiu.edu.vn
