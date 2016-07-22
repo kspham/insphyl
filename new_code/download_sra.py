@@ -1,5 +1,5 @@
 import os
-import ftplib
+import urllib2
 
 wdir = '/home/trile/Documents/insphyl'
 
