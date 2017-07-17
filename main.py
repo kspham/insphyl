@@ -88,7 +88,7 @@ def download_wrapper(meta, dirname):
 
 def trim(fastqfiles, outfiles, path_tool, path_adapter):
     ### Trim a paired-end data with trimmomatic
-    unpaired_files = ['tmp.fastq.gz', 'tmp_2.fastq.gz']
+    unpaired_files = ['.tmp.fastq.gz', '.tmp_2.fastq.gz']
     cmd = 'java -jar %s PE %s %s %s %s %s %s' % (path_tool, fastqfiles[0],
                             fastqfiles[1], outfiles[0], unpaired_files[0],
                             outfiles[1], unpaired_files[1])
@@ -125,7 +125,7 @@ def trim_wrapper(meta, dir_output, path_tool, path_adapter):
 
 def assembly(path_fastq, path_contig, path_spades):
     ### Assemble a sample
-    dir_tmp = 'assem_tmp'
+    dir_tmp = '.assem_tmp'
     cmd = '%s --careful ' % path_spades
     cmd += '-1 %s -2 %s -o %s' % (path_fastq[0], path_fastq[1], dir_tmp)
     os.system('%s >/dev/null 2>&1' % cmd)
@@ -158,7 +158,7 @@ def assembly_wrapper(meta, dir_assem, path_spades):
 
 def call_nsr(path_contig, path_nsr, path_ref, path_sibelia):
     ### Call NSR of a sample
-    dir_tmp, path_tmp = 'nsr_tmp', 'tmp.fasta'
+    dir_tmp, path_tmp = '.nsr_tmp', 'tmp.fasta'
     cmd = '%s -o %s -v %s ' % (path_sibelia, dir_tmp, path_tmp)
     cmd += '%s %s' % (path_ref, path_contig)
     os.system('%s >/dev/null 2>&1' % cmd)
