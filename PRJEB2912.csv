@@ -1,0 +1,15 @@
+fastq_ftp	sample_alias	status
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR101/ERR101899/ERR101899_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR101/ERR101899/ERR101899_2.fastq.gz	MRSA_10C	outbreak
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR101/ERR101900/ERR101900_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR101/ERR101900/ERR101900_2.fastq.gz	MRSA_11C	outbreak
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103394/ERR103394_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103394/ERR103394_2.fastq.gz	MRSA_12C	outbreak
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103395/ERR103395_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103395/ERR103395_2.fastq.gz	MRSA_14C	non-outbreak
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103396/ERR103396_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103396/ERR103396_2.fastq.gz	MRSA_15C	non-outbreak
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103397/ERR103397_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103397/ERR103397_2.fastq.gz	MRSA_16B	non-outbreak
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103398/ERR103398_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103398/ERR103398_2.fastq.gz	MRSA_17B	non-outbreak
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103400/ERR103400_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103400/ERR103400_2.fastq.gz	MRSA_19B	non-outbreak
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103401/ERR103401_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103401/ERR103401_2.fastq.gz	MRSA_1B	outbreak
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103402/ERR103402_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103402/ERR103402_2.fastq.gz	MRSA_20B	outbreak
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103403/ERR103403_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103403/ERR103403_2.fastq.gz	MRSA_6C	outbreak
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103404/ERR103404_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103404/ERR103404_2.fastq.gz	MRSA_7C	outbreak
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103405/ERR103405_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR103/ERR103405/ERR103405_2.fastq.gz	MRSA_8C	outbreak
+ftp.sra.ebi.ac.uk/vol1/fastq/ERR159/ERR159680/ERR159680_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR159/ERR159680/ERR159680_2.fastq.gz	MRSA_18B	non-outbreak
