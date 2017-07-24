@@ -317,7 +317,7 @@ def merge_data(meta, dir_result, path_uclust):
     path_ins = os.path.join(dir_result, 'cluster.json')
     tag = '[merge_data]'
     if os.path.exists(path_ins):
-        print '[WARNING] data was already merged'
+        print '[WARNING] Data was already merged'
     else:
         # Merge
         print tag, 'Merge'
@@ -344,7 +344,6 @@ def merge_data(meta, dir_result, path_uclust):
 
 def plot_boolean(meta_json, path_bcor, path_rmain, dir_result):
     ### Visualize boolean heatmap
-    tag = '[plot_boolean]'
     path_plot = os.path.join(dir_result, 'boolean.pdf')
     cmd = 'Rscript %s plot_boolean %s %s %s' % (path_rmain,
                                                 meta_json, path_bcor, path_plot)
@@ -358,10 +357,11 @@ def parse_boolean(meta, path_ins, dir_result, path_rmain):
     ins = json.load(open(path_ins), object_pairs_hook=OrderedDict)
     all_sam = meta.keys()
     path_bcor = os.path.join(dir_result, 'cor.csv')
-    # Create a boolean matrix
     if os.path.exists(path_bcor):
         print '[WARNING] Boolean correlation is already genereated'
     else:
+        # Create a boolean matrix
+        print tag, 'boolean matrix'
         out = open(path_bcor, 'w')
         out.write('%s\n' % ','.join([''] + all_sam))
         for _id, info in ins.iteritems():
@@ -370,12 +370,13 @@ def parse_boolean(meta, path_ins, dir_result, path_rmain):
             row = [_id] + row
             out.write('%s\n' % ','.join(row))
         out.close()
-    # Visualize boolean matrix
-    meta_json = '.meta.json'
-    json.dump(meta, open(meta_json, 'w'))
-    plot_boolean(meta_json, path_bcor, path_rmain, dir_result)
-    os.remove(meta_json)
-    return path_bcor
+        # Visualize boolean matrix
+        print tag, 'visualize'
+        meta_json = '.meta.json'
+        json.dump(meta, open(meta_json, 'w'))
+        plot_boolean(meta_json, path_bcor, path_rmain, dir_result)
+        os.remove(meta_json)
+        return path_bcor
 
 
 
@@ -383,12 +384,12 @@ def parse_boolean(meta, path_ins, dir_result, path_rmain):
 ### Main    ###
 ###############
 
-def main(path_code):
+def main(path_code, metafile, path_ref, dir_output):
     ### Main
     # Input
-    metafile = 'PRJEB2912.csv'
-    dir_output = 'mrsa_process'
-    path_ref = 'HE681097.fasta'
+    # metafile = 'PRJEB2912.csv'
+    # dir_output = 'mrsa_process'
+    # path_ref = 'HE681097.fasta'
     # Set up
     path_spades = 'spades.py'
     path_sibelia = 'C-Sibelia.py'
@@ -416,6 +417,7 @@ def main(path_code):
     # Post-NSR
     path_ins = merge_data(meta, dir_result, path_uclust)
     path_bcor = parse_boolean(meta, path_ins, dir_result, path_rmain)
+    print "Success"
 
 
 
