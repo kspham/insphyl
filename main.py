@@ -157,7 +157,7 @@ def trim_wrapper(meta, dir_output, path_tool, path_adapter):
 def assembly(path_fastq, path_contig, path_spades):
     ### Assemble a sample
     dir_tmp = '.assem_tmp'
-    cmd = '%s --careful -m 2 ' % path_spades
+    cmd = '%s --careful ' % path_spades
     cmd += '-1 %s -2 %s -o %s' % (path_fastq[0], path_fastq[1], dir_tmp)
     os.system('%s >/dev/null 2>&1' % cmd)
     shutil.move(os.path.join(dir_tmp, 'scaffolds.fasta'), path_contig)
