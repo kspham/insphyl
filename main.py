@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# Contact: Tri Le - lequangminhtri@gmail.com
 
 import os
 import urllib2
