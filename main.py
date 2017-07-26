@@ -341,16 +341,37 @@ def merge_data(meta, dir_result, path_uclust):
 ### Parse boolean   ###
 #######################
 
-def plot_boolean(meta_json, path_bcor, path_rmain, dir_result):
+def plot_boolean(meta_json, path_bcor, path_rmain, dir_result, path_ref):
     ### Visualize boolean heatmap
     path_plot = os.path.join(dir_result, 'boolean.pdf')
-    cmd = 'Rscript %s plot_boolean %s %s %s' % (path_rmain,
-                                                meta_json, path_bcor, path_plot)
+    refname = '.'.join(os.path.basename(path_ref).split('.')[:-1])
+    cmd = 'Rscript %s plot_boolean %s %s %s %s' % (path_rmain, meta_json,
+                                        path_bcor, path_plot, refname)
     os.system('%s >/dev/null 2>&1' % cmd)
+    # os.system(cmd)
 
 
 
-def parse_boolean(meta, path_ins, dir_result, path_rmain):
+def add_ref(path_bcor, path_ref):
+    ### Add reference into the boolean matrix
+    data = open(path_bcor)
+    refname = '.'.join(os.path.basename(path_ref).split('.')[:-1])
+    headers = next(data).strip().split(',')
+    headers.append(refname)
+    out = open(path_bcor, "w")
+    out.write("%s\n" % ','.join(headers))
+    for line in data:
+        line = line.strip().split(',')
+        line.append('0')
+        out.write("%s\n" % ','.join(line))
+    lastline = [str(int(line[0]) + 1)] + ["0"] * (len(headers) - 2) + ["1"]
+    lastline = ','.join(lastline)
+    out.write("%s\n" % lastline)
+    out.close()        
+
+
+
+def parse_boolean(meta, path_ins, dir_result, path_rmain, path_ref):
     ### Generate correlation from clusters
     tag = '[parse_boolean]'
     ins = json.load(open(path_ins), object_pairs_hook=OrderedDict)
@@ -369,11 +390,13 @@ def parse_boolean(meta, path_ins, dir_result, path_rmain):
             row = [_id] + row
             out.write('%s\n' % ','.join(row))
         out.close()
+        # Add reference
+        add_ref(path_bcor, path_ref)
         # Visualize boolean matrix
         print tag, 'visualize'
         meta_json = '.meta.json'
         json.dump(meta, open(meta_json, 'w'))
-        plot_boolean(meta_json, path_bcor, path_rmain, dir_result)
+        plot_boolean(meta_json, path_bcor, path_rmain, dir_result, path_ref)
         os.remove(meta_json)
         return path_bcor
 
@@ -415,7 +438,7 @@ def main(path_code, metafile, path_ref, dir_output):
     meta = rm_dup_wrapper(meta, dir_fnsr, path_uclust)
     # Post-NSR
     path_ins = merge_data(meta, dir_result, path_uclust)
-    path_bcor = parse_boolean(meta, path_ins, dir_result, path_rmain)
+    path_bcor = parse_boolean(meta, path_ins, dir_result, path_rmain, path_ref)
     print "Success"
 
 

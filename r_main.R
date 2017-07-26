@@ -5,7 +5,7 @@ library(cowplot)
 library(jsonlite)
 
 
-plot_boolean <- function(meta_json, path_cor, path_out) {
+plot_boolean <- function(meta_json, path_cor, path_out, refname) {
     # path_cor <- "mrsa_process/result/cor.csv"
 
     data <- read.csv(path_cor)
@@ -13,6 +13,10 @@ plot_boolean <- function(meta_json, path_cor, path_out) {
     # Collect status
     status <- as.character(unlist(lapply(meta, function(x) x$status)))
     status <- data.frame("sample" = names(meta), status, stringsAsFactors = F)
+    status <- rbind(status, list("sample" = refname, "status" = "reference"))
+    # Replace digit names
+    digit_names <- !is.na(lapply(substr(status$sample, 1, 1), as.numeric))
+    status$sample[digit_names] <- paste0("X", status$sample[digit_names])
     # Dendro
     hc <- hclust(dist(x = t(data[, -1])), "average")
     Order <- c(1, hc$order + 1)
