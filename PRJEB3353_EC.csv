@@ -1,0 +1,9 @@
+sample_alias	fastq_ftp	status
+EC5a	ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193650/ERR193650_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193650/ERR193650_2.fastq.gz	non-outbreak
+EC3a	ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193651/ERR193651_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193651/ERR193651_2.fastq.gz	outbreak
+EC2b	ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193652/ERR193652_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193652/ERR193652_2.fastq.gz	outbreak
+EC6a	ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193654/ERR193654_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193654/ERR193654_2.fastq.gz	non-outbreak
+EC7a	ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193655/ERR193655_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193655/ERR193655_2.fastq.gz	non-outbreak
+EC4a	ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193656/ERR193656_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193656/ERR193656_2.fastq.gz	non-outbreak
+EC1a	ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193657/ERR193657_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193657/ERR193657_2.fastq.gz	outbreak
+EC2a	ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193658/ERR193658_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR193/ERR193658/ERR193658_2.fastq.gz	outbreak
